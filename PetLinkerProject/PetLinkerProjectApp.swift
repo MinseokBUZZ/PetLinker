@@ -4,18 +4,7 @@
 //
 //  Created by Minseok Shim on 2023-12-24.
 //
-/*
-import SwiftUI
 
-@main
-struct PetLinkerProjectApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-    }
-}
-*/
 import SwiftUI
 
 @main

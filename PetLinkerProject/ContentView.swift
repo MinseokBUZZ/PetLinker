@@ -99,7 +99,7 @@ struct RadioButton: View {
                     .stroke(selectedOption == id ? Color.blue : Color.gray, lineWidth: 2)
                     .background(selectedOption == id ? Color.blue : Color.clear)
                     .clipShape(Circle())
-                    .frame(width: 20, height: 20) // Adjust size here
+                    .frame(width: 20, height: 20)
                 Text(text)
                     .font(.body)
                     .foregroundColor(.black)
@@ -270,7 +270,7 @@ struct PetFormView: View {
                 Image(uiImage: inputImage)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 100, height: 100) // Adjust the size as needed
+                    .frame(width: 100, height: 100)
             }
             CustomTextField(placeholder: "Name", text: $name)
             CustomTextField(placeholder: "Gender", text: $gender)
@@ -278,7 +278,7 @@ struct PetFormView: View {
             CustomTextField(placeholder: "Breed", text: $breed)
 
             TextEditor(text: $descr)
-                .frame(height: 200) // Adjust the height as needed
+                .frame(height: 200)
                 .padding()
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
@@ -297,7 +297,7 @@ struct PetFormView: View {
             }) {
                 Text("Save")
             }
-            // Style the button as needed
+           
         }
         .padding()
         .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
@@ -306,7 +306,7 @@ struct PetFormView: View {
     }
 
     func loadImage() {
-        // No need to do anything here if you don't want to process the image
+        
     }
 }
 
