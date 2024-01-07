@@ -10,5 +10,6 @@
 
 ## UI Design ##
 
-![image](https://github.com/MinseokBUZZ/PetLinker/assets/91091267/e2760e4d-08ad-49ec-bd07-d6853d2920f5)
+![image](https://github.com/MinseokBUZZ/PetLinker/assets/91091267/1248348b-bce0-4a6f-b640-c31d2e6cc2bc)
+
 
