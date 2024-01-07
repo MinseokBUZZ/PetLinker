@@ -180,10 +180,9 @@ struct ContentView: View {
         }
     }
 }
-
 struct PetListView: View {
     @EnvironmentObject var viewModel: PetViewModel
-    @State private var isShowingNewPetPage = false
+    @State private var isShowingNewPetForm = false
 
     var body: some View {
         ScrollView {
@@ -192,25 +191,22 @@ struct PetListView: View {
                 ForEach(viewModel.pets.filter { viewModel.categories[viewModel.selectedCategory] == $0.category }, id: \.self) { pet in
                     PetCard(pet: pet)
                 }
+                NavigationLink(destination: PetFormView().environmentObject(viewModel), isActive: $isShowingNewPetForm) { EmptyView() }
 
-                Button(action: {
-                    isShowingNewPetPage = true
-                }) {
-                    Text("Add New Pet")
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.blue)
-                        .cornerRadius(10)
+                Button("Add New Pet") {
+                    isShowingNewPetForm = true
                 }
-                .sheet(isPresented: $isShowingNewPetPage) {
-                    PetFormView().environmentObject(viewModel)
-                }
+                .foregroundColor(.white)
+                .padding()
+                .background(Color.blue)
+                .cornerRadius(10)
                 .padding()
                 .navigationTitle("Pet Types")
             }
         }
     }
 }
+
 struct PetCard: View {
     @EnvironmentObject var viewModel: PetViewModel
     var pet: Pet
@@ -242,17 +238,18 @@ struct PetFormView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var viewModel: PetViewModel
 
-    @State private var name: String
-    @State private var gender: String
-    @State private var age: String
-    @State private var breed: String
+    @State private var name: String = ""
+    @State private var gender: String = ""
+    @State private var age: String = ""
+    @State private var breed: String = ""
     @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
-    @State private var descr: String
+    @State private var descr: String = ""
 
     var pet: Pet?
 
     init(pet: Pet? = nil) {
+        self.pet = pet
         _name = State(initialValue: pet?.name ?? "")
         _gender = State(initialValue: pet?.gender ?? "")
         _age = State(initialValue: pet?.age ?? "")
@@ -264,49 +261,48 @@ struct PetFormView: View {
     }
 
     var body: some View {
-        VStack {
-            Button("Select Image") { showingImagePicker = true }
-            if let inputImage = inputImage {
-                Image(uiImage: inputImage)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 100, height: 100)
-            }
-            CustomTextField(placeholder: "Name", text: $name)
-            CustomTextField(placeholder: "Gender", text: $gender)
-            CustomTextField(placeholder: "Age", text: $age)
-            CustomTextField(placeholder: "Breed", text: $breed)
-
-            TextEditor(text: $descr)
-                .frame(height: 200)
-                .padding()
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.gray, lineWidth: 1)
-                )
-
-            Button(action: {
+            VStack {
+                Button("Select Image") { showingImagePicker = true }
                 if let inputImage = inputImage {
-                    if let pet = pet {
-                        viewModel.updatePet(pet, name: name, gender: gender, age: age, breed: breed, image: inputImage, descr: descr)
-                    } else {
-                        viewModel.addPet(name: name, gender: gender, age: age, breed: breed, image: inputImage, descr: descr)
-                    }
+                    Image(uiImage: inputImage)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 100, height: 100)
                 }
-                self.presentationMode.wrappedValue.dismiss()
-            }) {
-                Text("Save")
+                CustomTextField(placeholder: "Name", text: $name)
+                CustomTextField(placeholder: "Gender", text: $gender)
+                CustomTextField(placeholder: "Age", text: $age)
+                CustomTextField(placeholder: "Breed", text: $breed)
+
+                TextEditor(text: $descr)
+                    .frame(height: 200)
+                    .padding()
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color.gray, lineWidth: 1)
+                    )
+
+                Button(action: {
+                    if let inputImage = inputImage {
+                        if let pet = pet {
+                            viewModel.updatePet(pet, name: name, gender: gender, age: age, breed: breed, image: inputImage, descr: descr)
+                        } else {
+                            viewModel.addPet(name: name, gender: gender, age: age, breed: breed, image: inputImage, descr: descr)
+                        }
+                    }
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    Text("Save")
+                }
             }
-           
+            .navigationBarTitle(pet == nil ? "New Pet" : "Edit Pet", displayMode: .inline)
+            .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
+                ImagePicker(image: self.$inputImage)
+            }
         }
-        .padding()
-        .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
-            ImagePicker(image: self.$inputImage)
-        }
-    }
 
     func loadImage() {
-        
+       
     }
 }
 
