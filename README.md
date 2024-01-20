@@ -21,11 +21,11 @@
 ### Pet Details Page ###
 <img width="336" alt="PetDetails" src="https://github.com/MinseokBUZZ/PetLinker/assets/91091267/00d2825a-e579-45ef-bf4e-b2b0f25a1ff8">
 
-### New Pet Page ###
-<img width="336" alt="NewPetPage" src="https://github.com/MinseokBUZZ/PetLinker/assets/91091267/73ef33a7-760e-4ce0-900c-c66e7c4d145e">
-
 ### Edit Pet Page ###
 <img width="332" alt="EditPetPage" src="https://github.com/MinseokBUZZ/PetLinker/assets/91091267/1f4ec6b5-0c67-47af-b0e3-0ba43ba677fd">
+
+### New Pet Page ###
+<img width="336" alt="NewPetPage" src="https://github.com/MinseokBUZZ/PetLinker/assets/91091267/73ef33a7-760e-4ce0-900c-c66e7c4d145e">
 
 
 
