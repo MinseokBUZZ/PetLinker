@@ -1,4 +1,4 @@
-# Project Proposal & UI Design
+# PetLinker (iOS Final Project)
 
 ## Project Proposal ##
 
