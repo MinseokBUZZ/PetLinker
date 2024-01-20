@@ -17,8 +17,6 @@
 
 ### Home Page ###
 <img width="334" alt="PetTypes" src="https://github.com/MinseokBUZZ/PetLinker/assets/91091267/d2bb6459-ab4c-44d3-bd18-7f318c8984c9">
-<img width="340" alt="PetTypes_2" src="https://github.com/MinseokBUZZ/PetLinker/assets/91091267/82a4a644-8350-4ebd-9520-00f736c12412">
-<img width="340" alt="PetTypes_3" src="https://github.com/MinseokBUZZ/PetLinker/assets/91091267/12e7b53e-c80d-4916-aa4c-a31c80d09888">
 
 ### Pet Details Page ###
 <img width="336" alt="PetDetails" src="https://github.com/MinseokBUZZ/PetLinker/assets/91091267/00d2825a-e579-45ef-bf4e-b2b0f25a1ff8">
