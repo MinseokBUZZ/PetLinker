@@ -10,7 +10,27 @@
 
 ## UI Design ##
 
-![image](https://github.com/MinseokBUZZ/PetLinker/assets/91091267/e1e5907f-ffdb-4207-a6d4-3bfabc307366)
+![image](https://github.com/MinseokBUZZ/PetLinker/assets/91091267/2bda971c-b77e-4701-99a1-757a277f95ac)
+
+### Welcome Page ###
+<img width="337" alt="HomePage" src="https://github.com/MinseokBUZZ/PetLinker/assets/91091267/6a4bec7d-d425-4927-94b0-7d47513689ab">
+
+### Home Page ###
+<img width="334" alt="PetTypes" src="https://github.com/MinseokBUZZ/PetLinker/assets/91091267/d2bb6459-ab4c-44d3-bd18-7f318c8984c9">
+<img width="340" alt="PetTypes_2" src="https://github.com/MinseokBUZZ/PetLinker/assets/91091267/82a4a644-8350-4ebd-9520-00f736c12412">
+<img width="340" alt="PetTypes_3" src="https://github.com/MinseokBUZZ/PetLinker/assets/91091267/12e7b53e-c80d-4916-aa4c-a31c80d09888">
+
+### Pet Details Page ###
+<img width="336" alt="PetDetails" src="https://github.com/MinseokBUZZ/PetLinker/assets/91091267/00d2825a-e579-45ef-bf4e-b2b0f25a1ff8">
+
+### New Pet Page ###
+<img width="336" alt="PetDetails" src="https://github.com/MinseokBUZZ/PetLinker/assets/91091267/3095cc0c-2950-495b-8a96-8e2431f98e10">
+
+### Edit Pet Page ###
+<img width="332" alt="EditPetPage" src="https://github.com/MinseokBUZZ/PetLinker/assets/91091267/1f4ec6b5-0c67-47af-b0e3-0ba43ba677fd">
+
+
+
 
 
 
